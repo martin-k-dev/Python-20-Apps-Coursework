@@ -3,3 +3,6 @@
 .gradio
 /Weather Forecast App/.env
 /Webcam Motion Alert App/.env
+/Webcam Motion Alert App/images/test.png
+/Web Scraping App/database.db
+/Web Scraping App/Exercise/data.txt
