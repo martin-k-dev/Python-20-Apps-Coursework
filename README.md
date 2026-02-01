@@ -1,4 +1,4 @@
-This repo contains projects made during "Python Mega Course: Build 20 Real-World Apps and AI Agents"
+This repo contains projects made during "Python Mega Course: Build Real-World Apps and AI Agents"
 
 1. AI Chatbot (Chat with Einstein)
    - Uses Gradio + Google Gemini API
@@ -112,6 +112,22 @@ This repo contains projects made during "Python Mega Course: Build 20 Real-World
        - update database credentials if needed  
        - run:  
            - python main_mysql.py
+10. Browser Automation
+     - Uses Selenium + Tkinter
+     - GUI-based browser automation tool
+     - Automates login, form filling, and file downloading in a web browser
+     - Uses:
+        - gui.py for the graphical interface
+        - main.py for Selenium automation logic
+     - To run:
+        - install selenium
+        - install tkinter (usually included with Python)
+        - download ChromeDriver and place it in the project folder
+        - create a .env file with:
+           - USERNAME = your_username
+           - PASSWORD = your_password
+        - run:
+           - python gui.py
 
      
 More projects to come!
