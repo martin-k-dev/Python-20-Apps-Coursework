@@ -67,10 +67,51 @@ This repo contains projects made during "Python Mega Course: Build 20 Real-World
    - To run:  
        - Create a .env file with:  
            - EMAIL_ADDRESS – your Gmail address  
-           - APP_PASSWORD – Gmail app password  
+           - APP_PASSWORD – Gmail app password
+       - Make sure `extract.yaml` and the database schema exist  
        - Install the required packages
        - Run:  
            python main.py
+8. Hotel Booking System  
+    - Uses Pandas + CSV data storage  
+    - Console-based hotel booking simulation  
+    - Features:  
+        - View hotel availability  
+        - Book hotels and update availability  
+        - Credit card validation using stored data  
+        - Password-based credit card authentication  
+        - Reservation ticket generation  
+    - Data sources:  
+        - hotels.csv  
+        - cards.csv  
+        - card_security.csv  
+    - To run:  
+        - install pandas  
+        - make sure all CSV files are present  
+        - run:  
+            - python main.py
+
+9. Student Management System  
+   - Uses PyQt6 + SQLite / MySQL  
+   - Desktop GUI application for managing student records  
+   - Features:  
+       - Add, edit, delete, and search students  
+       - View all students in a table  
+       - Course selection via dropdown  
+   - Two versions included:  
+       - SQLite version (`main.py`)  
+       - MySQL version (`main_mysql.py`)  
+   - To run (SQLite version):  
+       - install PyQt6  
+       - make sure `database.db` exists with a `students` table  
+       - run:  
+           - python main.py  
+   - To run (MySQL version):  
+       - install PyQt6 and mysql-connector-python  
+       - set up a MySQL database with a `students` table  
+       - update database credentials if needed  
+       - run:  
+           - python main_mysql.py
 
      
 More projects to come!
