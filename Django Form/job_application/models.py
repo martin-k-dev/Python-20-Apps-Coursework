@@ -1,3 +1,5 @@
+import time
+
 from django.db import models
 
 # 1st step
