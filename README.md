@@ -112,6 +112,7 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
        - update database credentials if needed  
        - run:  
            - python main_mysql.py
+   
 10. Browser Automation
      - Uses Selenium + Tkinter
      - GUI-based browser automation tool
@@ -128,6 +129,26 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
            - PASSWORD = your_password
         - run:
            - python gui.py
+
+11. Flask Form Web App
+   - Uses Flask + SQLAlchemy + Flask-Mail
+   - Web-based form submission application
+   - Stores submitted form data in a SQLite database
+   - Sends a confirmation email to the user after submission
+   - Features:
+       - Database storage using SQLAlchemy ORM
+       - Email notifications via Gmail SMTP
+       - Bootstrap-based responsive UI
+   - Files:
+       - main.py for backend logic
+       - templates/index.html for the frontend form
+   - To run:
+       - install flask, flask-sqlalchemy, flask-mail
+       - create a .env file with:
+           - GMAIL_USERNAME = your_gmail_address
+           - GMAIL_APP_PASSWORD = your_gmail_app_password
+       - run: python main.py
+       - open browser at: http://127.0.0.1:5001
 
      
 More projects to come!
