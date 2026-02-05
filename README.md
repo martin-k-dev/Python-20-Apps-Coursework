@@ -12,6 +12,7 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
 9. [Student Management System](#student-management-system)
 10. [Browser Automation](#browser-automation)
 11. [Flask Form Web App](#flask-form-web-app)
+12. [Django Form Web App](#django-form-web-app)
 
 
 ## AI Chatbot (Chat with Einstein)
@@ -164,5 +165,26 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
        - run: python main.py
        - open browser at: http://127.0.0.1:5001
 
-     
+## Django Form Web App
+   - Uses Django + SQLite + Django Mail
+   - Web-based job application form
+   - Stores submitted form data in a SQLite database
+   - Sends a confirmation email after successful submission
+   - Includes Django Admin panel for managing applications
+   - Uses Bootstrap and template inheritance
+
+   - To run:
+       - install django, python-dotenv
+       - create a `.env` file with:
+           - EMAIL_HOST_USER = your_gmail_address
+           - EMAIL_HOST_PASSWORD = your_gmail_app_password
+       - run migrations:
+           - python manage.py migrate
+       - (optional) create admin user:
+           - python manage.py createsuperuser
+       - run:
+           - python manage.py runserver
+       - open browser at:
+           - http://127.0.0.1:8000/
+
 More projects to come!
