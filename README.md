@@ -172,7 +172,6 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
    - Sends a confirmation email after successful submission
    - Includes Django Admin panel for managing applications
    - Uses Bootstrap and template inheritance
-
    - To run:
        - install django, python-dotenv
        - create a `.env` file with:
