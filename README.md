@@ -14,6 +14,7 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
 11. [Flask Form Web App](#flask-form-web-app)
 12. [Django Form Web App](#django-form-web-app)
 13. [Invoice Generator App](#invoice-generator-app)
+14. [Invoicing PDF Package](#invoicing-pdf-package)
 
 
 
@@ -201,5 +202,19 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
        - run:
            - python main.py
        - generated PDFs will be saved in the `PDFs/` folder
+    
+## Invoicing PDF Package
+   - A small Python package for converting Excel invoice files into PDF invoices.  
+   - Based on a previous application - Invoice Generator App
+   - Features:
+      - Reads invoice data from Excel (.xlsx) files
+      - Generates formatted PDF invoices
+      - Automatically calculates total prices
+      - Supports custom column names
+      - Adds company name and logo to invoices
+   - Installation
+   - ```bash
+   - pip install invoicing-pdf-course-package
+
 
 More projects to come!
