@@ -1,13 +1,13 @@
 import pandas
 
-movies = pandas.read_csv('movies.csv')
 # credits = pandas.read_csv('credits.csv')
 # ratings = pandas.read_csv('ratings.csv')
 
 class PopularityFiltering:
     def __init__(self):
-        self.avg_rating_multiple_movies = movies["vote_average"].mean()
-        self.minimum_votes = movies["vote_count"].quantile(0.9)
+        self.movies = pandas.read_csv('movies.csv')
+        self.avg_rating_multiple_movies = self.movies["vote_average"].mean()
+        self.minimum_votes = self.movies["vote_count"].quantile(0.9)
 
     def weighted_rating(self, df, m=""):
         if m is "":
@@ -28,7 +28,7 @@ class PopularityFiltering:
         'weighted_rating': {'movieId': 'the_rating'}
         }
         """
-        movies_filtered = movies.copy().loc[movies["vote_count"] >= self.minimum_votes]
+        movies_filtered = self.movies.copy().loc[self.movies["vote_count"] >= self.minimum_votes]
 
         movies_filtered["weighted_rating"] = movies_filtered.apply(self.weighted_rating, axis=1)
 
