@@ -13,6 +13,8 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
 10. [Browser Automation](#browser-automation)
 11. [Flask Form Web App](#flask-form-web-app)
 12. [Django Form Web App](#django-form-web-app)
+13. [Invoice Generator App](#invoice-generator-app)
+
 
 
 ## AI Chatbot (Chat with Einstein)
@@ -185,5 +187,19 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
            - python manage.py runserver
        - open browser at:
            - http://127.0.0.1:8000/
+             
+## Invoice Generator App
+   - Uses Pandas + FPDF
+   - Generates PDF invoices from Excel (.xlsx) files
+   - Reads invoice data from spreadsheets and formats it into tables
+   - Automatically calculates total prices
+   - Adds invoice number, date, company name, and logo to each PDF
+   - To run:
+       - install pandas, fpdf
+       - place Excel invoice files in the `invoices/` folder
+       - make sure `pythonhow.png` logo file exists
+       - run:
+           - python main.py
+       - generated PDFs will be saved in the `PDFs/` folder
 
 More projects to come!
