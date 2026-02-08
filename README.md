@@ -212,9 +212,10 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
       - Automatically calculates total prices
       - Supports custom column names
       - Adds company name and logo to invoices
-   - Installation
-   - ```bash
-   - pip install invoicing-pdf-course-package
+   - Installation:
+      - pip install invoicing-pdf-course-package
+      - from invoicing import generate
+      - Supply the function with required parameters
 
 
 More projects to come!
