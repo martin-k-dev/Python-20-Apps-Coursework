@@ -13,6 +13,10 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
 10. [Browser Automation](#browser-automation)
 11. [Flask Form Web App](#flask-form-web-app)
 12. [Django Form Web App](#django-form-web-app)
+13. [Movie Recommendation System](#movie-recommendation-system)
+14. [Invoice Generator App](#invoice-generator-app)
+15. [Invoicing PDF Package](#invoicing-pdf-package)
+
 
 
 ## AI Chatbot (Chat with Einstein)
@@ -185,5 +189,62 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
            - python manage.py runserver
        - open browser at:
            - http://127.0.0.1:8000/
+        
+## Movie Recommendation System
+   - Uses Pandas + scikit-learn + scikit-surprise
+   - Implements three recommendation approaches:
+      - Popularity Filtering:
+          - Ranks movies using weighted ratings
+          - Considers average rating and number of votes
+          - Returns top-N most popular movies
+
+      - Content Filtering:
+          - Uses TF-IDF on movie descriptions
+          - Computes cosine similarity between movies
+          - Recommends movies similar to a given title
+
+      - Collaborative Filtering:
+          - Uses SVD (matrix factorization)
+          - Predicts how a user might rate a movie
+          - Based on user–movie rating history
+   - To run:
+       - install pandas, scikit-learn, scikit-surprise
+       - make sure the required CSV files are present:
+           - movies.csv / movies_small.csv
+           - ratings.csv
+       - run any module (or import):
+           - python PopularityFiltering.py
+           - python ContentFiltering.py
+           - python CollaborativeFiltering.py
+
+             
+## Invoice Generator App
+   - Uses Pandas + FPDF
+   - Generates PDF invoices from Excel (.xlsx) files
+   - Reads invoice data from spreadsheets and formats it into tables
+   - Automatically calculates total prices
+   - Adds invoice number, date, company name, and logo to each PDF
+   - To run:
+       - install pandas, fpdf
+       - place Excel invoice files in the `invoices/` folder
+       - make sure `pythonhow.png` logo file exists
+       - run:
+           - python main.py
+       - generated PDFs will be saved in the `PDFs/` folder
+    
+## Invoicing PDF Package
+   - A small Python package for converting Excel invoice files into PDF invoices.  
+   - Based on a previous application - Invoice Generator App
+   - Features:
+      - Reads invoice data from Excel (.xlsx) files
+      - Generates formatted PDF invoices
+      - Automatically calculates total prices
+      - Supports custom column names
+      - Adds company name and logo to invoices
+   - Installation:
+      - pip install invoicing-pdf-course-package
+      - from invoicing import generate
+      - Supply the function with required parameters
+
 
 More projects to come!
