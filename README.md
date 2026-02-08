@@ -13,8 +13,9 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
 10. [Browser Automation](#browser-automation)
 11. [Flask Form Web App](#flask-form-web-app)
 12. [Django Form Web App](#django-form-web-app)
-13. [Invoice Generator App](#invoice-generator-app)
-14. [Invoicing PDF Package](#invoicing-pdf-package)
+13. [Movie Recommendation System](#movie-recommendation-system)
+14. [Invoice Generator App](#invoice-generator-app)
+15. [Invoicing PDF Package](#invoicing-pdf-package)
 
 
 
@@ -188,6 +189,34 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
            - python manage.py runserver
        - open browser at:
            - http://127.0.0.1:8000/
+        
+## Movie Recommendation System
+   - Uses Pandas + scikit-learn + scikit-surprise
+   - Implements three recommendation approaches:
+      - Popularity Filtering:
+          - Ranks movies using weighted ratings
+          - Considers average rating and number of votes
+          - Returns top-N most popular movies
+
+      - Content Filtering:
+          - Uses TF-IDF on movie descriptions
+          - Computes cosine similarity between movies
+          - Recommends movies similar to a given title
+
+      - Collaborative Filtering:
+          - Uses SVD (matrix factorization)
+          - Predicts how a user might rate a movie
+          - Based on user–movie rating history
+   - To run:
+       - install pandas, scikit-learn, scikit-surprise
+       - make sure the required CSV files are present:
+           - movies.csv / movies_small.csv
+           - ratings.csv
+       - run any module (or import):
+           - python PopularityFiltering.py
+           - python ContentFiltering.py
+           - python CollaborativeFiltering.py
+
              
 ## Invoice Generator App
    - Uses Pandas + FPDF
