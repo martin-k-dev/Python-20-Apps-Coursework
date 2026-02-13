@@ -21,8 +21,16 @@ class ContentFiltering:
         return similarity_matrix
 
     def similar_movies(self, movie_title, nr_movies):
+        """
+        :param movie_title: the function finds similar movies to this one
+        :param nr_movies: how many movies to return
+        :return:
+        """
         # Index of a movie title
-        idx = self.movies.loc[self.movies["title"] == movie_title].index[0]
+        try:
+            idx = self.movies.loc[self.movies["title"] == movie_title].index[0]
+        except IndexError:
+            return "Could not find a movie with that name"
 
         scores = list(enumerate(self.similarity_matrix[idx]))
 
