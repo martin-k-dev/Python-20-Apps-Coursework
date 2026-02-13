@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="container d-flex flex-column align-items-center mt-5">
-            <div class="card p-4 shadow" style="max-width: 700px; width: 100%;">
+            <div class="card p-4 shadow" style="max-width: 900px; width: 100%;">
                 <h1 class="card-title text-center mt-4 mb-4">Movie Recommendation System</h1>
                 <form method="post">
                     <div class="form-group mb-4">
@@ -16,35 +16,61 @@
                           <label for="movie_name">Enter the movie name here...</label>
                         </div>
                         <div class="form-group mb-2">
-                            <label class="form-floating mb-3">Filtering Method:</label>
-                            <br>
-                            <div class="btn-group-vertical mb-4" id="filtering_type">
-                                <input class="btn-check form-control" type="radio" id="collabfilter"
-                                       name="filtering_type" value="collab" required disabled>
-                                <label class="btn btn-outline-secondary" for="collabfilter">Collaborative Filtering</label>
+                            <div class="d-flex justify-content-between align-items-start gap-3">
+                                <div>
+                                    <label class="form-floating mb-3">Filtering Method:</label>
+                                    <br>
+                                    <div class="btn-group-vertical mb-4" id="task_type">
+                                        <input class="btn-check form-control" type="radio" id="collabfilter"
+                                               name="task_type" value="collab" required disabled>
+                                        <label class="btn btn-outline-secondary" for="collabfilter">Collaborative Filtering</label>
 
-                                <input class="btn-check form-control" type="radio" id="contentfilter"
-                                       name="filtering_type" value="content" required>
-                                <label class="btn btn-outline-secondary" for="contentfilter">Content Filtering</label>
+                                        <input class="btn-check form-control" type="radio" id="findsimilarmovies"
+                                               name="task_type" value="findsimilarmovies" required>
+                                        <label class="btn btn-outline-secondary" for="findsimilarmovies">Find 3 similar movies</label>
 
-                                <input class="btn-check form-control" type="radio" id="popularfilter"
-                                       name="filtering_type" value="popular" required>
-                                <label class="btn btn-outline-secondary" for="popularfilter">Popular Filtering</label>
+                                        <input class="btn-check form-control" type="radio" id="findtop10movies"
+                                               name="task_type" value="findtop10movies" required>
+                                        <label class="btn btn-outline-secondary" for="findtop10movies">Find Top 10 Movies</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    {% if movie_name %}
+                                        <p class="mt-0">You searched for: <strong>{{ movie_name }}</strong></p>
+                                    {% endif %}
+                                    {% if task_type == "collab" %}
+                                        <label class="form-floating mb-3">Users Also Liked</label>
+
+                                    {% elif task_type == "findsimilarmovies" %}
+                                        <label class="form-floating mb-3">
+                                            Movies Similar to "{{ movie_name }}"
+                                        </label>
+
+                                    {% endif %}
+
+                                    {% if task_output and task_type == "findtop10movies" %}
+                                    <label class="form-floating mb-3">
+                                        <strong>Top 10 Movies:</strong>
+                                    </label>
+                                    <div class="row justify-content-center">
+                                        <div class="col">
+                                            {% for item in task_output %}
+                                                <div class="card mb-2 shadow-sm">
+                                                    <div class="card-body py-1 px-2">
+                                                        <h5 class="card-title">{{ item }}</h5>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div>
+
+                                </div>
                             </div>
                         </div>
                         <button class="btn btn-secondary mb-4" type="submit">Submit</button>
-                        {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                        <div class="alert alert-success">
-                            {% for message in messages %}
-                                {{ message }}
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        {% endwith %}
-                        {% if movie_name %}
-                            <p class="mt-3">You searched for: <strong>{{ movie_name }}</strong></p>
-                        {% endif %}
                     </div>
                 </form>
             </div>

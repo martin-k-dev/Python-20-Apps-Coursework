@@ -8,7 +8,7 @@ def collaborative_filtering(userId, movieId):
     Return an estimated value
 
     Had some problems with installing scikit.surprise on newer python version,
-    but the code should run fine.
+    but the code runs fine.
     """
     ratings = pandas.read_csv("ratings.csv")[["userId", "movieId", "rating"]]
 
