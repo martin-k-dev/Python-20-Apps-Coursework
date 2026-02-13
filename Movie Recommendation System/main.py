@@ -30,8 +30,7 @@ def index():
                 filtering = ContentFiltering.ContentFiltering()
             case "findtop10movies":
                 filtering = PopularityFiltering.PopularityFiltering()
-                found_films: dict = filtering.top_x_movies(10)
-                found_films_names: list = found_films["title"].values()
+                found_films_names = filtering.top_x_movies_names_only(10, True)
                 task_output = found_films_names
 
     return render_template("index.html",
