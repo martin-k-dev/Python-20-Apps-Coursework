@@ -24,10 +24,12 @@ def index():
         filtering = None
         match task_type:
             case "collab":
-                print("Cannot show collaborative filtering, the feature is experiencing issues...")
+                task_output = "Cannot show collaborative filtering, the feature is experiencing issues..."
                 # filtering = CollaborativeFiltering.collaborative_filtering(0, movie_name)
             case "findsimilarmovies":
-                filtering = ContentFiltering.ContentFiltering()
+                filtering = ContentFiltering.ContentFiltering(file_to_read="movies.csv", separator=',')
+                similar_movies = filtering.similar_movies(movie_name, 5)
+                task_output = similar_movies
             case "findtop10movies":
                 filtering = PopularityFiltering.PopularityFiltering()
                 found_films_names = filtering.top_x_movies_names_only(10, True)

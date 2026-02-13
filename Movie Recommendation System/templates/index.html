@@ -27,42 +27,37 @@
 
                                         <input class="btn-check form-control" type="radio" id="findsimilarmovies"
                                                name="task_type" value="findsimilarmovies" required>
-                                        <label class="btn btn-outline-secondary" for="findsimilarmovies">Find 3 similar movies</label>
+                                        <label class="btn btn-outline-secondary" for="findsimilarmovies">Find 5 similar movies</label>
 
                                         <input class="btn-check form-control" type="radio" id="findtop10movies"
                                                name="task_type" value="findtop10movies" required>
-                                        <label class="btn btn-outline-secondary" for="findtop10movies">Find Top 10 Movies</label>
+                                        <label class="btn btn-outline-secondary" for="findtop10movies">Show Top 10 Movies</label>
                                     </div>
                                 </div>
                                 <div>
-                                    {% if movie_name %}
-                                        <p class="mt-0">You searched for: <strong>{{ movie_name }}</strong></p>
-                                    {% endif %}
-                                    {% if task_type == "collab" %}
-                                        <label class="form-floating mb-3">Users Also Liked</label>
-
-                                    {% elif task_type == "findsimilarmovies" %}
-                                        <label class="form-floating mb-3">
-                                            Movies Similar to "{{ movie_name }}"
-                                        </label>
-
-                                    {% endif %}
-
-                                    {% if task_output and task_type == "findtop10movies" %}
-                                    <label class="form-floating mb-3">
-                                        <strong>Top 10 Movies:</strong>
-                                    </label>
-                                    <div class="row justify-content-center">
-                                        <div class="col">
-                                            {% for item in task_output %}
-                                                <div class="card mb-2 shadow-sm">
-                                                    <div class="card-body py-1 px-2">
-                                                        <h5 class="card-title">{{ item }}</h5>
+                                    {% if task_output %}
+                                        {% if task_type == "findtop10movies" %}
+                                            <label class="form-floating mb-3">
+                                                <strong>Top 10 Movies:</strong>
+                                            </label>
+                                        {% elif task_type == "findsimilarmovies" %}
+                                            <label class="form-floating mb-3">
+                                                Movies Similar to "{{ movie_name }}"
+                                            </label>
+                                        {% elif task_type == "collab" %}
+                                            <label class="form-floating mb-3">Users Also Liked:</label>
+                                        {% endif %}
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                {% for item in task_output %}
+                                                    <div class="card mb-2 shadow-sm">
+                                                        <div class="card-body py-1 px-2">
+                                                            <h5 class="card-title">{{ item }}</h5>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            {% endfor %}
+                                                {% endfor %}
+                                            </div>
                                         </div>
-                                    </div>
                                     {% endif %}
                                 </div>
                                 <div>
