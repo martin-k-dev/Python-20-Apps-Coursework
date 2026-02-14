@@ -1,4 +1,8 @@
-This repo contains projects made during "Python Mega Course: Build Real-World Apps and AI Agents"
+This repo contains projects made during "Python Mega Course: Build Real-World Apps and AI Agents": [Link](https://www.udemy.com/course/the-python-mega-course/)
+
+Completion certificate: [Certificate Link](https://www.udemy.com/certificate/UC-b5d9c9c3-203b-4f0b-9516-6857cd73b1c9/)
+
+More projects to come!
 
 ## Contents
 1. [AI Chatbot (Chat with Einstein)](#ai-chatbot-chat-with-einstein)
@@ -191,33 +195,44 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
            - http://127.0.0.1:8000/
         
 ## Movie Recommendation System
-   - Uses Pandas + scikit-learn + scikit-surprise
-   - Implements three recommendation approaches:
-      - Popularity Filtering:
-          - Ranks movies using weighted ratings
-          - Considers average rating and number of votes
-          - Returns top-N most popular movies
+   - Uses Flask + Pandas + scikit-learn
+   - Implements web-based movie recommendations with two working approaches:
+       - Popularity Filtering:
+           - Ranks movies using weighted ratings
+           - Considers average rating and number of votes
+           - Returns Top 10 most popular movies
+             
+       - Content Filtering:
+           - Uses TF-IDF on movie descriptions
+           - Computes cosine similarity between movies
+           - Recommends 5 movies similar to a given title
 
-      - Content Filtering:
-          - Uses TF-IDF on movie descriptions
-          - Computes cosine similarity between movies
-          - Recommends movies similar to a given title
-
-      - Collaborative Filtering:
-          - Uses SVD (matrix factorization)
-          - Predicts how a user might rate a movie
-          - Based on user–movie rating history
+       - Collaborative Filtering:
+           - Originally implemented using SVD (matrix factorization)
+           - Based on user–movie rating history
+           - Currently disabled in the web app due to implementation issues
+            
+   - Web Application:
+       - Built with Flask
+       - Simple Bootstrap-based UI
+       - User selects filtering method via radio buttons
+       - Results are dynamically rendered on the same page
    - To run:
-       - install pandas, scikit-learn, scikit-surprise
+       - install flask, pandas, scikit-learn, scikit-surprise
        - make sure the required CSV files are present:
            - movies.csv / movies_small.csv
            - ratings.csv
-       - run any module (or import):
-           - python PopularityFiltering.py
-           - python ContentFiltering.py
-           - python CollaborativeFiltering.py
+       - run:
+           - python main.py
+       - open the link shown in the console (default):
+           - http://127.0.0.1:5002/
+   - To run tests:
+       - pytest
+       - Tests verify:
+           - Flask app loads correctly
+           - Main page renders (GET request)
+           - Form data is properly read (POST request)
 
-             
 ## Invoice Generator App
    - Uses Pandas + FPDF
    - Generates PDF invoices from Excel (.xlsx) files
@@ -245,6 +260,4 @@ This repo contains projects made during "Python Mega Course: Build Real-World Ap
       - pip install invoicing-pdf-course-package
       - from invoicing import generate
       - Supply the function with required parameters
-
-
-More projects to come!
+        
