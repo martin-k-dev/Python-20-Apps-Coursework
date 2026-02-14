@@ -1,6 +1,6 @@
 This repo contains projects made during "Python Mega Course: Build Real-World Apps and AI Agents": [Link](https://www.udemy.com/course/the-python-mega-course/)
 
-Completion certificate[Certificate Link](https://www.udemy.com/certificate/UC-b5d9c9c3-203b-4f0b-9516-6857cd73b1c9/)
+Completion certificate: [Certificate Link](https://www.udemy.com/certificate/UC-b5d9c9c3-203b-4f0b-9516-6857cd73b1c9/)
 
 More projects to come!
 
